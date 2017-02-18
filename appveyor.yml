@@ -2,34 +2,18 @@
 
 # Test against these versions of Node.js.
 environment:
-  MOCHA_REPORTER: "mocha-appveyor-reporter"
   matrix:
     - nodejs_version: "4"
     - nodejs_version: "6"
 
-branches:
-  only:
-    - master
-    - beta
-    - release
-
 # Install scripts. (runs after repo cloning)
 install:
   - ps: Install-Product node $env:nodejs_version
-  - appveyor-retry npm i -g npm@^3
-  - appveyor-retry choco install phantomjs
-  - appveyor-retry yarn
-  - appveyor-retry yarn add mocha-appveyor-reporter # must be installed locally.
-
-cache:
-  - '%LOCALAPPDATA%\Yarn'
-  - '%APPDATA%\Roaming\bower'
+  - npm install
 
 # Post-install test scripts.
 test_script:
-  # Output useful info for debugging.
-  - git rev-parse HEAD
-  - cmd: yarn run test-all
+  - npm test
 
 # Don't actually build.
 build: off

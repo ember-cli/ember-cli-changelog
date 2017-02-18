@@ -1,8 +1,0 @@
-/assets
-/dev
-/docs
-/tests/!(helpers)
-/tmp
-/*.*
-!.travis.yml
-!appveyor.yml
