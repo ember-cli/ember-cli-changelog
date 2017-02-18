@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "github": "^8.0.0",
-    "multiline": "^1.0.2",
     "rsvp": "^3.3.3"
   },
   "devDependencies": {

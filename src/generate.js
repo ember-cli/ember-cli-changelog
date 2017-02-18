@@ -55,8 +55,7 @@ module.exports = function(base, head) {
 
 
 function generateChangelog(contributions) {
-  let header = multiline(() => { /*
-The following changes are required if you are upgrading from the previous
+  let header = `The following changes are required if you are upgrading from the previous
 version:
 
 - Users
@@ -66,8 +65,7 @@ version:
 - Core Contributors
   + No changes required
 
-#### Community Contributions
-  */ });
+#### Community Contributions`;
 
   let footer = 'Thank you to all who took the time to contribute!';
 
